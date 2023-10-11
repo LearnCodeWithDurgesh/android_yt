@@ -81,10 +81,15 @@
 
   - **Constraint Layout**: It is similar to RelativeLayout in that all views are set up according to the relationships between sibling views and the parent layout, but it is more flexible than RelativeLayout and easier to use with the Layout Editor in Android Studio
 
+    ![Alt text](images/image-3.png)
+
+  - **Linear Layout**: Arrage the components in linear way
+
     ![Alt text](images/image.png)
 
   - **Frame Layout** : FrameLayout is designed to display a single object in a section of the screen
     ![Alt text](images/image-2.png)
+
   - **Table Layout** :TableLayout is a ViewGroup that presents its children in rows and columns.
 
     ![Alt text](images/image-4.png)
