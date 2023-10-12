@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--    custom edit text colors-->
+    <color name="edit_text_background_color">#E7E7F2</color>
+    <color name="edit_text_border_color">#5C5C5C</color>
 </resources>

@@ -35,10 +35,13 @@
         android:id="@+id/editTextText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
+        android:background="@drawable/custom_input_text_field_background"
         android:ems="10"
         android:hint="Enter here"
-        android:inputType="text" />
+        android:inputType="text"
+        android:padding="12dp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -52,10 +55,16 @@
         android:id="@+id/editTextText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
+        android:background="@drawable/custom_input_text_field_background"
         android:ems="10"
+
         android:hint="Enter here"
-        android:inputType="text" />
+        android:inputType="text"
+        android:padding="12dp"
+
+        />
 
     <TextView
         android:id="@+id/textView5"
@@ -70,9 +79,15 @@
         android:id="@+id/editTextTextPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
+        android:background="@drawable/custom_input_text_field_background"
+
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:padding="12dp"
+
+        />
 
     <TextView
         android:id="@+id/textView6"
@@ -86,10 +101,16 @@
         android:id="@+id/editTextText3"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:layout_marginTop="10dp"
         android:layout_weight="1"
+        android:background="@drawable/custom_input_text_field_background"
         android:ems="10"
+
         android:hint="Write here"
-        android:inputType="textMultiLine" />
+        android:inputType="textMultiLine"
+        android:padding="12dp"
+
+        />
 
     <TextView
         android:id="@+id/textView7"
@@ -177,7 +198,6 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:layout_weight="1"
-            android:backgroundTint="@android:color/holo_green_dark"
             android:text="Signup" />
 
         <Button
@@ -188,7 +208,6 @@
             android:backgroundTint="@color/design_default_color_error"
             android:text="Clear" />
     </LinearLayout>
-
 
 
 </LinearLayout>
