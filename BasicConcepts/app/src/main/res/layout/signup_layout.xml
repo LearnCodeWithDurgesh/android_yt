@@ -186,6 +186,44 @@
             android:text="Android" />
     </LinearLayout>
 
+    <!--    date picker for dob-->
+    <TextView
+        android:id="@+id/dob_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:text="Select DOB" />
+
+    <EditText
+        android:id="@+id/pick_date_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/custom_input_text_field_background"
+        android:padding="12dp"
+        android:inputType="none"
+        android:focusable="false"
+        android:hint="dd/mm/yyyy"
+
+        />
+
+    <TextView
+        android:id="@+id/country_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:text="Select country" />
+
+    <Spinner
+        android:id="@+id/country_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
