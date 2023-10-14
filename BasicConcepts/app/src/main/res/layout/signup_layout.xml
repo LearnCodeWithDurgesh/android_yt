@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:text="Fill all d etails correctly..." />
+        android:text="Fill all d details correctly..." />
 
     <TextView
         android:id="@+id/textView3"
@@ -32,7 +32,7 @@
         android:text="Name" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/name_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -52,7 +52,7 @@
         android:text="Email" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/email_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -67,7 +67,7 @@
         />
 
     <TextView
-        android:id="@+id/textView5"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -76,7 +76,7 @@
         android:text="Password" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/password_exit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -98,7 +98,7 @@
         android:text="Write something about yourself" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/about_edit_text"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
@@ -121,26 +121,27 @@
         android:text="Select Gender" />
 
     <RadioGroup
+        android:id="@+id/gender_radio_group"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/gender_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/gender_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Male" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/gender_other"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -164,21 +165,21 @@
         android:orientation="horizontal">
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/java_course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Java" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
+            android:id="@+id/python_course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Python" />
 
         <CheckBox
-            android:id="@+id/checkBox5"
+            android:id="@+id/android_course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -193,7 +194,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/submit_button"
 
             style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
@@ -203,7 +204,7 @@
             android:text="Signup" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/clear_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
