@@ -30,11 +30,8 @@ Tapping on spinner display all values and user can select
 ```java
 pinner spinner = (Spinner) findViewById(R.id.names_spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout.
-ArrayAdapter<String> adapter = ArrayAdapter.createFromResource(
-        this,
-        namesArray
-        android.R.layout.simple_spinner_item
-);
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, countryNames);
+
 // Specify the layout to use when the list of choices appears.
 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner.
@@ -49,10 +46,17 @@ Use **onItemSelected()** method to attach the listener.
 
 ```java
 
-namesSpinner.setOnItemSelectedListener(
-    (parent,view,pos,id)->{
+nameSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(MainActivity.this, countryNames[position] + " selected", Toast.LENGTH_LONG).show();
 
-    //item  clicked with pos
-})
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 ```
