@@ -3,6 +3,7 @@ package com.example.basic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.basic.adapters.Country;
+import com.example.basic.adapters.CountryAdapter;
+
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,14 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
     private CheckBox javaCheck, pythonCheck, androidCheck;
 
-    private String countryNames[] = {
+    private Country listItem[] = {
 
-            "INDIA",
-            "AUSTRALIA",
-            "SOUTH AFRICA",
-            "KOREA",
-            "CHINA",
-            "USA"
+            new Country(1, "INDIA", "This is first country"),
+            new Country(2, "AUSTRALIA", "This is second country", R.drawable.aus), new Country(3, "SOUTH AFRICA", "This is third country"), new Country(4, "KOREA", "This is fourth country"), new Country(5, "CHINA", "This is Fifth country"), new Country(6, "US", "This is sixth country"),
+
     };
 
     private Spinner spinner;
@@ -61,33 +63,28 @@ public class MainActivity extends AppCompatActivity {
             int day = calendar.get(Calendar.DAY_OF_MONTH);
 
 
-            DatePickerDialog datePickerDialog = new DatePickerDialog(
-                    this,
-                    (view1, selectedYear, selectedMonth, selectedDay) -> {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this, (view1, selectedYear, selectedMonth, selectedDay) -> {
 //                        ye call hoga kab jab ham date ko pick kar lenge
-                        datePickerButton.setText(selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear);
-                        Toast.makeText(this, "year: " + selectedYear + " month: " + selectedMonth + " day : " + selectedDay, Toast.LENGTH_SHORT).show();
+                datePickerButton.setText(selectedDay + "/" + (selectedMonth + 1) + "/" + selectedYear);
+                Toast.makeText(this, "year: " + selectedYear + " month: " + selectedMonth + " day : " + selectedDay, Toast.LENGTH_SHORT).show();
 
-                    },
-                    year,
-                    month,
-                    day
-            );
+            }, year, month, day);
 
             datePickerDialog.show();
         });
 
 //        adapter use spinner ko populate karne lie
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, countryNames);
+//        ArrayAdapter<String> arrayAdapter = new <String>(this, android.R.layout.simple_spinner_dropdown_item, countryNames);
 
-        spinner.setAdapter(arrayAdapter);
+        CountryAdapter countryAdapter = new CountryAdapter(Arrays.asList(listItem), this);
+        spinner.setAdapter(countryAdapter);
         spinner.setSelection(5);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, countryNames[position] + " selected", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, listItem[position] + " selected", Toast.LENGTH_LONG).show();
 
             }
 
@@ -111,8 +108,7 @@ public class MainActivity extends AppCompatActivity {
 //        };
 
         //attach  listener:
-        button.setOnClickListener(view ->
-        {
+        button.setOnClickListener(view -> {
             //here goes your code
 //            Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show();
 
@@ -208,5 +204,7 @@ public class MainActivity extends AppCompatActivity {
         clearButton = findViewById(R.id.clear_button);
         datePickerButton = findViewById(R.id.pick_date_button);
         spinner = findViewById(R.id.country_spinner);
+
+
     }
 }

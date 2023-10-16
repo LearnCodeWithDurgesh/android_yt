@@ -1,0 +1,86 @@
+## Working with BaseAdapter
+
+- BaseAdapter is a common base class of a general implementation of an Adapter that can be used in ListView, GridView, Spinner etc.
+
+- Whenever you need a customized list in a ListView or customized grids in a GridView you create your own adapter and extend base adapter in that.
+
+- Base Adapter can be extended to create a custom Adapter for displaying a custom list item.
+
+- **ArrayAdapter** Also implement BaseAdapter
+
+## How to create custom adapter
+
+```java
+package com.example.basic.adapters;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.basic.R;
+
+import java.util.List;
+
+public class CountryAdapter extends BaseAdapter {
+
+    private List<Country> list;
+    private Context context;
+
+
+    public CountryAdapter(List<Country> list, Context context) {
+        this.list = list;
+        this.context = context;
+    }
+
+    // return number of items
+
+    @Override
+    public int getCount() {
+        return list.size();
+    }
+
+
+    // return item
+    @Override
+    public Object getItem(int position) {
+        return list.get(position);
+    }
+
+
+    //return item id
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+
+    // Get the view at specified position
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.country_item, parent, false);
+            TextView name = convertView.findViewById(R.id.name);
+            TextView about = convertView.findViewById(R.id.about);
+            ImageView imageView = convertView.findViewById(R.id.imageView);
+            Country country = list.get(position);
+            name.setText(country.getName());
+            about.setText(country.getAbout());
+            imageView.setImageResource(country.getImage());
+
+        }
+        return convertView;
+    }
+}
+
+
+```
+
+output
+
+![Alt text](image-1.png)
