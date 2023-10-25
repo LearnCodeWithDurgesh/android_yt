@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+
+    >
+
+
+    <!--        post header-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/postImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/story1"
+                app:civ_border_color="#FF5722"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/postUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@id/postImage"
+                android:text="Durgesh Kumar Tiwari"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/postSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/postUserName"
+                android:layout_toRightOf="@id/postImage"
+
+                android:text="sponsored" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingEnd="10dp"
+                android:src="@drawable/more" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--        post image-->
+
+
+    <ImageView
+        android:id="@+id/mainPostImage"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/story1"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/postHeartButton"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/heart"
+
+            />
+
+        <ImageView
+
+            android:id="@+id/postCommentButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/postHeartButton"
+            android:src="@drawable/chat" />
+
+        <ImageView
+            android:id="@+id/postShareButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@+id/postCommentButton"
+            android:src="@drawable/send" />
+
+        <ImageView
+            android:id="@+id/postSaveButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/save_instagram"
+
+            />
+
+    </RelativeLayout>
+
+    <!--        show likes section-->
+    <TextView
+        android:id="@+id/likeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="100 Likes"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/postCaption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="This is Caption of the post . which we have created using android studio"
+        android:textColor="#292929" />
+
+
+    <TextView
+        android:id="@+id/commentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:text="View all 16 comments"
+        android:textColor="#5F5F5F" />
+
+
+    <View
+
+
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="4dp"
+        android:background="#e2e2e2"
+        app:layout_constraintTop_toBottomOf="@id/single_post" />
+
+
+</LinearLayout>

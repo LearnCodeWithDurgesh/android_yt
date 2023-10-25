@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.basic.data.User;
 
@@ -16,7 +18,11 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        Log.e("Life","onCreate");
+        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
         initialiseViews();
+        
+        
 
         signUpButton.setOnClickListener(view -> {
 //            start activity-> signUp activity
@@ -57,4 +63,40 @@ public class StartActivity extends AppCompatActivity {
         dashboardButton = findViewById(R.id.dashboard_button);
         aboutButton = findViewById(R.id.about_button);
     }
+
+    @Override
+    protected void onStart() {
+        Log.e("Life","onStart");
+        Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        Log.e("Life","onResume");
+        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.e("Life","onPause");
+        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.e("Life","onStop");
+        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
+        super.onStop();
+    }
+    @Override
+    protected void onDestroy() {
+        Log.e("Life","onDestroy");
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
+        super.onDestroy();
+    }
+
+  
 }
