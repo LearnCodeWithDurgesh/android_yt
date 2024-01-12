@@ -1,8 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.CurrencyConverter" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.CurrencyConverter" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">
+            @color/secondaryBlue
+        </item>
+<!--        <item name="materialButtonStyle">-->
+<!--            @style/Widget.AppCompat.Button-->
+<!--        </item>-->
+        <item name="android:textColor" >
+            @color/secondaryBlue
+        </item>
+
     </style>
 
     <style name="Theme.CurrencyConverter" parent="Base.Theme.CurrencyConverter" />
