@@ -20,6 +20,8 @@ public class Question {
 
     private int checkValue = -1;
 
+    private  String givenAnswer="";
+
 //.........data
 
 

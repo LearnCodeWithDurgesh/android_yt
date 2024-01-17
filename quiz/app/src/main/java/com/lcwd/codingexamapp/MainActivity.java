@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.lcwd.codingexamapp.config.Constants;
 import com.lcwd.codingexamapp.data.Question;
 import com.lcwd.codingexamapp.databinding.ActivityMainBinding;
 import com.lcwd.codingexamapp.helper.QuestionGenerator;
@@ -22,6 +25,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int currentIndex = 0;
     List<Question> questions;
 
+    private CountDownTimer timer;
+
+
+    private int timeLeft = Constants.TOTAL_EXAM_TIME;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +38,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(binding.getRoot());
 
         initComponents();
+        startTimer();
 
+
+    }
+
+
+    private void submitTest() {
+        Toast.makeText(this, "Test submitted", Toast.LENGTH_SHORT).show();
+//        questons-->
+    }
+
+    //    start timer method
+    private void startTimer() {
+
+        timer = new CountDownTimer(Constants.TOTAL_EXAM_TIME * 1000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                //har ek tick pe ye  chalega
+                int min = timeLeft / 60;
+                int sec = timeLeft % 60;
+                binding.timer.setText("Timer: " + min + " min " + sec + " sec");
+                timeLeft--;
+
+//                update circular progress bar
+                binding.circularProgressBar.setProgress((float) timeLeft/Constants.TOTAL_EXAM_TIME*100);
+
+
+            }
+
+            @Override
+            public void onFinish() {
+                //jab hamara timer finish hoga to ye chalega
+//                Toast.makeText(MainActivity.this, "Timer finished", Toast.LENGTH_SHORT).show();
+                submitTest();
+                binding.timer.setText("Finished");
+            }
+        };
+
+        timer.start();
 
     }
 
@@ -93,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         questions.get(currentIndex).setCheckValue(buttonClicked.getId());
+//        Log.e("checked answer",buttonClicked.getText().toString());
 
 
     }
